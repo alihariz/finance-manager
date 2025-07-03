@@ -42,7 +42,7 @@ export default {
       this.errorMessage = '';
       this.successMessage = '';
       try {
-        const res = await fetch('http://146.190.93.28/api/auth/register', {
+        const res = await fetch('https://finance-manager-webtect.duckdns.org/api/auth/register', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(this.form)

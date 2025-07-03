@@ -18,7 +18,7 @@ const store = createStore({
       // Fetch users data from API and commit to state
     },
     async fetchTransactions({ commit }) {
-      const res = await fetch('http://146.190.93.28/api/transactions', {
+      const res = await fetch('https://finance-manager-webtect.duckdns.org/api/transactions', {
         headers: { Authorization: `Bearer ${localStorage.getItem('jwt_token')}` }
       });
       const data = await res.json();
