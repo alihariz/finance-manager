@@ -29,6 +29,12 @@ $jwtMiddleware = new JwtMiddleware($secretKey, $unprotectedRoutes);
 $app->addRoutingMiddleware();
 $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 
+
+$app->get('/hello', function ($request, $response) {
+    $response->getBody()->write("Hello, world!");
+    return $response;
+});
+
 // --- Unprotected Routes (Register & Login) ---
 $app->post('/api/auth/register', function (Request $request, Response $response) use ($secretKey) {
     try {
