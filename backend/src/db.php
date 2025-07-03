@@ -12,9 +12,9 @@ class db
     public function getPDO(): PDO
     {
         $host = 'localhost';
-        $db   = 'finance_manager'; // <-- make sure this matches your new DB
-        $user = 'root'; // <--  MySQL username
-        $pass = '';     // <--  MySQL password
+        $db   = 'financemanager';
+        $user = 'fmuser';
+        $pass = 'yourpassword'; // use the password you set
         $charset = 'utf8mb4';
 
         $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
