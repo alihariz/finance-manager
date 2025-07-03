@@ -65,29 +65,26 @@ export default {
 <style scoped>
 .register-container {
   max-width: 420px;
-  margin: 40px auto;
-  padding: 32px 28px 24px 28px;
-  border-radius: 12px;
-  background: #fff;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.10);
-  border: 1px solid #e3e3e3;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
+  margin: 60px auto;
+  padding: 32px 28px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h2 {
   text-align: center;
-  color: #007bff;
-  margin-bottom: 28px;
+  color: #2c3e50;
   font-weight: 700;
-  letter-spacing: 1px;
+  margin-bottom: 24px;
+  font-size: 1.8rem;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 1.2rem;
 }
 
 .form-row {
@@ -97,76 +94,74 @@ form {
 }
 
 label {
-  font-size: 1rem;
-  color: #333;
-  font-weight: 500;
+  font-weight: 600;
+  color: #495057;
+  font-size: 0.95rem;
 }
 
 input, select {
-  padding: 9px 12px;
-  border: 1px solid #bfc9d1;
-  border-radius: 5px;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
   font-size: 1rem;
-  background: #f8fafc;
-  transition: border 0.2s;
+  background: white;
+  transition: all 0.3s ease;
 }
 
 input:focus, select:focus {
-  border: 1.5px solid #007bff;
   outline: none;
-  background: #fff;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
 .register-btn {
-  margin-top: 10px;
-  padding: 11px 0;
-  background: linear-gradient(90deg, #007bff 60%, #0056b3 100%);
-  color: #fff;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
   border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  font-size: 1.08rem;
+  padding: 0.75rem;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s;
-  box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .register-btn:hover {
-  background: linear-gradient(90deg, #0056b3 60%, #007bff 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-.error-msg, .success-msg {
-  margin-top: 18px;
-  text-align: center;
-  font-size: 1rem;
+.success-msg, .error-msg {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
   font-weight: 500;
-  border-radius: 4px;
-  padding: 8px 0;
-}
-
-.error-msg {
-  color: #dc3545;
-  background: #fff0f2;
-  border: 1px solid #f5c2c7;
+  text-align: center;
 }
 
 .success-msg {
-  color: #28a745;
-  background: #eafaf1;
-  border: 1px solid #b7e4c7;
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.error-msg {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
 }
 
 .login-link {
-  margin-top: 22px;
+  margin-top: 1.2rem;
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 .login-link a {
-  color: #007bff;
-  text-decoration: none;
+  color: #667eea;
   font-weight: 600;
-  margin-left: 4px;
+  text-decoration: none;
 }
 
 .login-link a:hover {
