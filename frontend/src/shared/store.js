@@ -1,9 +1,6 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import { createStore } from 'vuex';
 
-Vue.use(Vuex);
-
-const store = new Vuex.Store({
+const store = createStore({
   state: {
     users: [],
     transactions: [],
@@ -22,7 +19,7 @@ const store = new Vuex.Store({
     },
     async fetchTransactions({ commit }) {
       const res = await fetch('http://localhost:8000/api/transactions', {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        headers: { Authorization: `Bearer ${localStorage.getItem('jwt_token')}` }
       });
       const data = await res.json();
       commit('setTransactions', data);

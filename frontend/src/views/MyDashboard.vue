@@ -1,13 +1,18 @@
 <template>
   <div class="dashboard">
-    <div class="dashboard-header">
-      <h1>Finance Dashboard</h1>
-      <button @click="logout" class="logout-btn">
-        <span>Logout</span>
+    <div class="sidebar">
+      <div class="sidebar-title">Finance Manager</div>
+      <router-link to="/dashboard" class="sidebar-link" active-class="active-link">
+        Dashboard
+      </router-link>
+      <router-link to="/statistics" class="sidebar-link" active-class="active-link">
+        Statistics
+      </router-link>
+      <button @click="logout" class="sidebar-link logout-btn">
+        Logout
       </button>
     </div>
-
-    <div class="dashboard-content">
+    <div class="dashboard-main">
       <!-- Add Transaction Section -->
       <div class="card add-transaction-card">
         <div class="card-header">
@@ -645,45 +650,63 @@ export default {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.dashboard-header {
+.sidebar {
+  width: 220px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2rem 1rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
 }
 
-.dashboard-header h1 {
-  color: white;
-  font-size: 2.5rem;
+.sidebar-title {
+  color: #fff;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin: 0;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+.sidebar-link {
+  color: #fff;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+  display: block;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active-link {
+  background: rgba(255,255,255,0.15);
 }
 
 .logout-btn {
+  margin-top: auto;
   background: #e74c3c;
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #fff;
 }
 
 .logout-btn:hover {
   background: #c0392b;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-.dashboard-content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+.dashboard-main {
+  margin-left: 240px;
+  padding: 2rem 0 2rem 0;
 }
 
 .card {
