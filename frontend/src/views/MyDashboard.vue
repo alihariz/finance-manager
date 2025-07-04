@@ -406,7 +406,7 @@ export default {
       this.errorMessage = '';
       try {
         const token = localStorage.getItem('jwt_token');
-        const res = await fetch('https://finance-manager-webtect.duckdns.org/api/transactions', {
+        const res = await fetch('http://localhost:8000/api/transactions', {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const data = await res.json();
@@ -530,7 +530,7 @@ export default {
       this.successMessage = '';
       try {
         const token = localStorage.getItem('jwt_token');
-        const res = await fetch('https://finance-manager-webtect.duckdns.org/api/transactions', {
+        const res = await fetch('http://localhost:8000/api/transactions', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -576,7 +576,7 @@ export default {
       this.successMessage = '';
       try {
         const token = localStorage.getItem('jwt_token');
-        const res = await fetch(`https://finance-manager-webtect.duckdns.org/api/transactions/${this.editTransaction.id}`, {
+        const res = await fetch(`http://localhost:8000/api/transactions/${this.editTransaction.id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
@@ -608,7 +608,7 @@ export default {
       this.successMessage = '';
       try {
         const token = localStorage.getItem('jwt_token');
-        const res = await fetch(`https://finance-manager-webtect.duckdns.org/api/transactions/${transactionId}`, {
+        const res = await fetch(`http://localhost:8000/api/transactions/${transactionId}`, {
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${token}`

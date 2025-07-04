@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://finance-manager-webtect.duckdns.org/api";
+const API_BASE_URL = "http://localhost:8000/api";
 
 export async function login(username, password) {
     const response = await fetch(`${API_BASE_URL}/auth/login`, {

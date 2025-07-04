@@ -322,7 +322,7 @@ export default {
       this.errorMessage = ''
       try {
         const token = localStorage.getItem('jwt_token')
-        const res = await fetch('https://finance-manager-webtect.duckdns.org/api/transactions', {
+        const res = await fetch('http://localhost:8000/api/transactions', {
           headers: { 'Authorization': `Bearer ${token}` }
         })
         const data = await res.json()
